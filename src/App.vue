@@ -1,7 +1,7 @@
 <template>
   <TooSt></TooSt>
   <Asdd></Asdd>
-  <h1>asdawdasd</h1>
+  <h1>123</h1>
   <router-view/>
 </template>
 <style lang="scss">
