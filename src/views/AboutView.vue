@@ -1,15 +1,50 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
-
-<button type="button" class="btn btn-link">Link</button>
+<div id="carouselExampleControls" class="aboutbody carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../assets/big.png" class="d-block" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="" class="d-block " alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="" class="d-block" alt="">
+    </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 </template>
+
+<script>
+import carousel from "bootstrap/js/dist/carousel";
+export default {
+  updated(){
+    const carousels = new carousel({
+      interval: 2000,
+      wrap: false
+    })
+    console.log(carousels) 
+  }
+}
+</script>
+<style scoped lang="scss">
+.aboutbody{
+  width: 100%;
+  .carousel-inner{
+    width: 100%;
+    .carousel-item{
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
+</style>
