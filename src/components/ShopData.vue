@@ -291,7 +291,7 @@ export default {
               display: flex;
               .img1 {
                 width: 55%;
-                min-width: 60px;
+                min-width: 50px;
                 img {
                   max-width: 105px;
                   max-height: 105px;
