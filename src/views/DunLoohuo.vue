@@ -19,10 +19,6 @@ export default {
     this.$http.defaults.headers.common["Authorization"] = token;
     const HuoApIloojim = `${process.env.VUE_APP_API}api/user/check`;
     this.$http.post(HuoApIloojim).then((e) => {
-      // this.EmiTter.on("ggb", (e) => {
-      //   console.log(e, 66666);
-      // });
-      // this.EmiTter.emit("aas");
       if (!e.data.success) {
         this.$router.push("/DunLoo");
       }

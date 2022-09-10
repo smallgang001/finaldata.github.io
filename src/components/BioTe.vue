@@ -180,10 +180,11 @@ export default {
       display: flex;
       justify-content: space-between;
       .navleft {
-        padding: 1rem;
+        padding: 0rem;
         .as {
           img {
             width: 30%;
+            margin: 0 auto;
           }
         }
       }
