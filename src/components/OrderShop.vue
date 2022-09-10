@@ -171,15 +171,15 @@ export default {
             width: 20%;
           }
           .th2 {
-            width: 60%;
+            width: 40%;
           }
           .th3 {
             text-align: center;
-            width: 10%;
+            width: 20%;
           }
           .th4 {
             text-align: center;
-            width: 10%;
+            width: 20%;
           }
         }
         tbody {
@@ -189,6 +189,8 @@ export default {
               .img1 {
                 width: 55%;
                 min-width: 50px;
+                max-height: 60px;
+                min-height: 40px;
               }
               .img2 {
                 padding-bottom: 5rem;
