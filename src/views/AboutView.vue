@@ -1209,10 +1209,10 @@
                   .num {
                     width: 45%;
                     .p2 {
-                      font-size: 1px;
+                      font-size: 8px;
                     }
                     .p3 {
-                      font-size: 1px;
+                      font-size: 8px;
                     }
                   }
                   .price {

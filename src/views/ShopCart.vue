@@ -10,7 +10,7 @@
     <div class="shopunbtn">
       <div class="mar">
         <div class="btnleft">
-          <button type="button">
+          <button @click="about" type="button">
             <img src="../assets/chevron-left.svg" alt="" />
             <p>回上一頁</p>
           </button>
@@ -79,6 +79,9 @@ export default {
           }
         }
       });
+    },
+    about() {
+      this.$router.push("/about");
     },
   },
 };
@@ -269,7 +272,7 @@ export default {
             transition: all 0.3s linear;
             p {
               font-weight: bold;
-              font-size: 8px;
+              font-size: 12px;
             }
           }
           .shape-ex2 > p {
@@ -309,7 +312,7 @@ export default {
             p {
               padding-top: 1rem;
               padding-bottom: 1rem;
-              font-size: 8px;
+              font-size: 12px;
               font-weight: bold;
             }
           }

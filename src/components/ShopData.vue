@@ -188,6 +188,7 @@ export default {
       }
       tbody {
         tr {
+          max-height: 150px;
           .td1 {
             display: flex;
             .img1 {
@@ -274,15 +275,15 @@ export default {
             width: 20%;
           }
           .th2 {
-            width: 60%;
+            width: 40%;
           }
           .th3 {
             text-align: center;
-            width: 10%;
+            width: 20%;
           }
           .th4 {
             text-align: center;
-            width: 10%;
+            width: 20%;
           }
         }
         tbody {
@@ -294,8 +295,6 @@ export default {
                 min-width: 50px;
                 img {
                   max-width: 100px;
-                  min-width: 20px;
-                  max-height: 105px;
                 }
               }
               .img2 {
@@ -316,17 +315,17 @@ export default {
               vertical-align: middle;
               text-align: center;
               .num {
-                width: 50%;
+                width: 100%;
                 display: flex;
                 margin: 0 auto;
-                min-width: 60px;
+                min-width: 0px;
                 button {
-                  width: 30%;
+                  width: 35%;
                   background: #ffffff;
                   border: 0.1rem #000000 solid;
                 }
                 .nums {
-                  width: 25%;
+                  width: 30%;
                 }
               }
               .num::-webkit-outer-spin-button,
@@ -336,7 +335,7 @@ export default {
               }
             }
             .td4 {
-              font-size: 0.8rem;
+              font-size: 8px;
               vertical-align: middle;
               text-align: center;
             }
