@@ -259,6 +259,7 @@ export default {
           ) {
             this.presets = true;
             alert("請確認訂單內容");
+            this.Load = false;
           } else {
             this.presets = false;
             for (let i = 0; i < e.data.data.carts.length; i++) {

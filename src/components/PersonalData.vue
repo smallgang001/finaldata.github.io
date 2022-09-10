@@ -116,4 +116,63 @@ export default {
     }
   }
 }
+@media screen and (max-width: 720px) {
+  .personals {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    .personal {
+      text-align: left;
+      .names {
+        margin-top: 0.5rem;
+        p {
+          font-size: 1.4rem;
+          font-weight: bold;
+          margin-bottom: 0.8rem;
+        }
+      }
+      .phone {
+        margin-top: 0.5rem;
+        p {
+          font-size: 1.4rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+      }
+      .email {
+        margin-top: 0.5rem;
+        p {
+          font-size: 1.4rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+      }
+      .pay {
+        margin-top: 0.5rem;
+        p {
+          font-size: 1.4rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+      }
+      .address {
+        margin-top: 0.5rem;
+        p {
+          font-size: 1.4rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+      }
+      .buy {
+        margin-top: 0.5rem;
+        p {
+          font-size: 1.4rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
 </style>

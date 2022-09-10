@@ -812,10 +812,29 @@
                   }
                 }
                 .rightima {
-                  margin-top: 2rem;
+                  position: relative;
                   width: 70%;
-                  img {
+                  .bgimg {
                     width: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-position: center;
+                    background-size: cover;
+                    z-index: 1;
+                    background-image: url("../assets/99.png");
+                    img {
+                      position: absolute;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+                      width: 80%;
+                      z-index: 2;
+                    }
                   }
                 }
               }
