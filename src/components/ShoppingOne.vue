@@ -124,6 +124,7 @@ export default {
             transform: translateY(-50%);
           }
           img {
+            width: 100%;
           }
         }
         p {
@@ -146,7 +147,6 @@ export default {
         display: flex;
         flex-direction: column;
         width: 100%;
-
         .process1 {
           text-align: center;
           overflow: hidden;
@@ -183,6 +183,7 @@ export default {
               transform: translateY(-50%);
             }
             img {
+              width: 100%;
             }
           }
           p {

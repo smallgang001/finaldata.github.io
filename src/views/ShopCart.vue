@@ -233,7 +233,6 @@ export default {
       width: 90%;
       margin: 0 auto;
       padding-bottom: 5rem;
-
       .mar {
         width: 80%;
         margin: 0 auto;
@@ -270,7 +269,7 @@ export default {
             transition: all 0.3s linear;
             p {
               font-weight: bold;
-              font-size: 0.2rem;
+              font-size: 8px;
             }
           }
           .shape-ex2 > p {
@@ -310,7 +309,7 @@ export default {
             p {
               padding-top: 1rem;
               padding-bottom: 1rem;
-              font-size: 0.8rem;
+              font-size: 8px;
               font-weight: bold;
             }
           }

@@ -291,7 +291,7 @@ export default {
               display: flex;
               .img1 {
                 width: 55%;
-                min-width: 50px;
+                min-width: 60px;
               }
               .img2 {
                 padding-bottom: 5rem;
