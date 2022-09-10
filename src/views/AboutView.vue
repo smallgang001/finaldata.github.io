@@ -387,8 +387,6 @@
                 margin-bottom: 1rem;
                 font-size: 0.5rem;
                 line-height: 20px;
-                img {
-                }
               }
             }
           }
@@ -791,8 +789,6 @@
                   margin-bottom: 1rem;
                   font-size: 0.5rem;
                   line-height: 20px;
-                  img {
-                  }
                 }
               }
             }
@@ -1177,8 +1173,6 @@
                   margin-bottom: 1rem;
                   font-size: 0.5rem;
                   line-height: 20px;
-                  img {
-                  }
                 }
               }
             }

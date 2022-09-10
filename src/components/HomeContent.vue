@@ -2138,8 +2138,6 @@ export default {
             color: #ffffff;
             .top {
               display: none;
-              tr {
-              }
             }
             .tbody {
               tr {
