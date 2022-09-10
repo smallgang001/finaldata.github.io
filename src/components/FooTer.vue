@@ -29,9 +29,15 @@
             © Computer components website<br />by Ging-Wen，Huang
           </p>
           <div class="community">
-            <a href="#"><img src="../assets/twitter1.svg" alt="" /></a>
-            <a href="#"><img src="../assets/github1.svg" alt="" /></a>
-            <a href="#"><img src="../assets/instagram2.svg" alt="" /></a>
+            <a href="https://twitter.com/a09163313753"
+              ><img src="../assets/twitter1.svg" alt=""
+            /></a>
+            <a href="https://github.com/smallgang001/finaldata.github.io"
+              ><img src="../assets/github1.svg" alt=""
+            /></a>
+            <a href="https://www.instagram.com/lookmyeyes666/"
+              ><img src="../assets/instagram2.svg" alt=""
+            /></a>
           </div>
         </div>
       </div>

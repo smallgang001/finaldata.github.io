@@ -288,18 +288,15 @@ export default {
         }
         tbody {
           tr {
-            max-height: 150px;
-            min-height: 120px;
+            max-height: 60px;
+            min-height: 40px;
             .td1 {
               display: flex;
               .img1 {
                 width: 55%;
                 min-width: 50px;
-                img {
-                  max-width: 100px;
-                  max-height: 150px;
-                  min-height: 120px;
-                }
+                max-height: 60px;
+                min-height: 40px;
               }
               .img2 {
                 padding-bottom: 5rem;
