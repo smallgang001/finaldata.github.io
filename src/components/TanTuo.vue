@@ -20,11 +20,12 @@
         </div>
         <div class="modal-body">
           <div class="right">
-            <p>請輸入圖片網ssasd址</p>
+            <p>請輸入圖片網址</p>
             <input
               class="form-control form-control-lg"
               type="text"
-              placeholder="請輸入圖片網址" v-model="tt.ims"
+              placeholder="請輸入圖片網址"
+              v-model="tt.ims"
             />
             <div>
               <label for="formFileLg" class="form-label">或，上傳圖片</label>
@@ -43,7 +44,7 @@
             >
               上傳圖片
             </button>
-            <img :src="tt.ims" alt="" class="as">
+            <img :src="tt.ims" alt="" class="as" />
           </div>
           <div class="left">
             <p>新增標題</p>
@@ -55,13 +56,159 @@
             />
             <div class="two">
               <div class="ssd">
-                <p>分類</p>
-                <input
-                  v-model="tt.category"
-                  class="form-control form-control-lg"
-                  type="text"
-                  placeholder="輸入分類"
-                />
+                <div class="ssddf">
+                  <div class="ssdfan">
+                    <p>分類</p>
+                    <select class="fanlea1" v-model="tt.category">
+                      <option value="" hidden>請選擇商品分類</option>
+                      <option value="顯示卡">顯示卡</option>
+                      <option value="記憶體">記憶體</option>
+                      <option value="主機板">主機板</option>
+                      <option value="CPU">CPU</option>
+                    </select>
+                  </div>
+                  <div class="ssdlea">
+                    <p>類別</p>
+                    <select
+                      class="fanlea2"
+                      v-model="tt.leabia"
+                      v-if="tt.category == ''"
+                      disabled
+                    >
+                      <option
+                        class="form-control form-control-lg"
+                        value=""
+                        hidden
+                      >
+                        請選擇
+                      </option>
+                    </select>
+                    <select
+                      class="fanlea2"
+                      v-model="tt.leabia"
+                      v-if="tt.category == '顯示卡'"
+                    >
+                      <option
+                        class="form-control form-control-lg"
+                        value=""
+                        hidden
+                      >
+                        請選擇
+                      </option>
+                      <option
+                        class="form-control form-control-lg"
+                        value="GTX16系列"
+                      >
+                        GTX16系列
+                      </option>
+                      <option
+                        class="form-control form-control-lg"
+                        value="RTX20系列"
+                      >
+                        RTX20系列
+                      </option>
+                      <option
+                        class="form-control form-control-lg"
+                        value="RTX30系列"
+                      >
+                        RTX30系列
+                      </option>
+                    </select>
+                    <select
+                      class="fanlea2"
+                      v-model="tt.leabia"
+                      v-if="tt.category == '記憶體'"
+                    >
+                      <option
+                        class="form-control form-control-lg"
+                        value=""
+                        hidden
+                      >
+                        請選擇
+                      </option>
+                      <option
+                        class="form-control form-control-lg"
+                        value="DDR3系列"
+                      >
+                        DDR3系列
+                      </option>
+                      <option
+                        class="form-control form-control-lg"
+                        value="DDR4系列"
+                      >
+                        DDR4系列
+                      </option>
+                      <option
+                        class="form-control form-control-lg"
+                        value="DDR5系列"
+                      >
+                        DDR5系列
+                      </option>
+                    </select>
+                    <select
+                      class="fanlea2"
+                      v-model="tt.leabia"
+                      v-if="tt.category == '主機板'"
+                    >
+                      <option
+                        class="form-control form-control-lg"
+                        value=""
+                        hidden
+                      >
+                        請選擇
+                      </option>
+                      <option
+                        class="form-control form-control-lg"
+                        value="ROG系列"
+                      >
+                        ROG系列
+                      </option>
+                      <option
+                        class="form-control form-control-lg"
+                        value="TUF系列"
+                      >
+                        TUF系列
+                      </option>
+                      <option
+                        class="form-control form-control-lg"
+                        value="PRIME系列"
+                      >
+                        PRIME系列
+                      </option>
+                    </select>
+                    <select
+                      class="fanlea2"
+                      v-model="tt.leabia"
+                      v-if="tt.category == 'CPU'"
+                    >
+                      <option
+                        class="form-control form-control-lg"
+                        value=""
+                        hidden
+                      >
+                        請選擇
+                      </option>
+                      <option
+                        class="form-control form-control-lg"
+                        value="i5系列"
+                      >
+                        i5系列
+                      </option>
+                      <option
+                        class="form-control form-control-lg"
+                        value="i6系列"
+                      >
+                        i6系列
+                      </option>
+                      <option
+                        class="form-control form-control-lg"
+                        value="i7系列"
+                      >
+                        i7系列
+                      </option>
+                    </select>
+                  </div>
+                </div>
               </div>
               <div class="ssds">
                 <p>單位</p>
@@ -134,32 +281,51 @@
     </div>
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .maxss {
   margin-left: 20rem;
-  .maxs { 
+  .maxs {
     width: 65vw;
     .modal-body {
       display: flex;
       .right {
-          width: 100%;
+        width: 100%;
         .padd {
           margin-top: 2rem;
         }
-        .as{
-            width: 80%;
+        .as {
+          width: 80%;
         }
       }
       .left {
         width: 100%;
         margin-left: 5rem;
         .two {
+          width: 100%;
           display: flex;
           .ssd {
-            width: 100%;
+            width: 50%;
+            .ssddf {
+              display: flex;
+              width: 100%;
+              .ssdfan {
+                width: 50%;
+                .fanlea1 {
+                  width: 100%;
+                  height: 130%;
+                }
+              }
+              .ssdlea {
+                width: 50%;
+                .fanlea2 {
+                  width: 100%;
+                  height: 130%;
+                }
+              }
+            }
           }
           .ssds {
-            width: 100%;
+            width: 50%;
             margin-left: 1.5rem;
           }
         }
@@ -186,13 +352,12 @@ export default {
   data() {
     return {
       aa: {},
-      tt: {},
-      ts: {},
-
-      loading:false
+      tt: { category: "", leabia: "" },
+      loading: false,
     };
   },
-  inject:['EmiTter'],
+  inject: ["EmiTter"],
+  created() {},
   methods: {
     as() {
       this.aa.show();
@@ -204,58 +369,57 @@ export default {
       if (this.tt.id == undefined) {
         const ApIloojim = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product`;
         this.$http.post(ApIloojim, { data: this.tt }).then((e) => {
-          console.log(e);
           this.tt = {};
           this.$emit("getda");
-          if(e.data.success){
-            this.EmiTter.emit('mess',{
-                style: "rgb(6, 173, 202)",
-                title: '商品添加成功',
-                content:'以增加商品'
-            })
-          }else if(!e.data.success){
-            console.log(e.data.message,66666666666)
-            this.EmiTter.emit('mess',{
+          if (e.data.success) {
+            this.EmiTter.emit("mess", {
+              style: "rgb(6, 173, 202)",
+              title: "商品添加成功",
+              content: "以增加商品",
+            });
+          } else if (!e.data.success) {
+            this.EmiTter.emit("mess", {
               style: "rgb(228, 15, 210)",
-              title: '商品添加失敗',
-              content:e.data.message.join('、')
-            })
+              title: "商品添加失敗",
+              content: e.data.message.join("、"),
+            });
           }
         });
-         this.aa.hide();
+        this.aa.hide();
       } else {
         const ApIloojim = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product/${this.tt.id}`;
         this.$http.put(ApIloojim, { data: this.tt }).then((e) => {
-          console.log(e.data);
           this.tt = {};
           this.$emit("getda");
-          if(e.data.success){
-            this.EmiTter.emit('mess',{
-                style: "rgb(6, 173, 202)",
-                title: '更新成功',
-                content:'已成功更新商品'
-            })
-          }else if(!e.data.success){
-            this.EmiTter.emit('mess',{
+          if (e.data.success) {
+            this.EmiTter.emit("mess", {
+              style: "rgb(6, 173, 202)",
+              title: "更新成功",
+              content: "已成功更新商品",
+            });
+          } else if (!e.data.success) {
+            this.EmiTter.emit("mess", {
               style: "rgb(228, 15, 210)",
-              title: '更新失敗',
-              content:e.data.message.join('、')
-            })
+              title: "更新失敗",
+              content: e.data.message.join("、"),
+            });
           }
         });
-         this.aa.hide();
+        this.aa.hide();
       }
-
-
     },
-    fileimg(){
-        const fileimgs = this.$refs.fileimgs.files[0];
-        const nf = new FormData();
-        nf.append('file-to-upload' , fileimgs)
-        const ApIloojim = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/upload`;
-        this.$http.post(ApIloojim , nf).then(e=>{
-            this.tt.ims = e.data.imageUrl
-        });
+    fileimg() {
+      const fileimgs = this.$refs.fileimgs.files[0];
+      const nf = new FormData();
+      nf.append("file-to-upload", fileimgs);
+      const ApIloojim = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/upload`;
+      this.$http.post(ApIloojim, nf).then((e) => {
+        this.tt.ims = e.data.imageUrl;
+        this.tt.ima.push(this.tt.ims);
+      });
+    },
+    bs() {
+      this.tt.ima.push(this.tt.ims);
     },
   },
   mounted() {

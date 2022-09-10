@@ -5,177 +5,238 @@
       <nav class="navbars">
         <div class="navleft">
           <router-link class="as nav-link" to="/"
-            ><img src="../assets/logo1.png" alt=""
+            ><img src="../assets/pngwing.svg" alt=""
           /></router-link>
         </div>
         <div class="navright">
           <ul>
-            <li><router-link class="nav-link" to="/">首頁</router-link></li>
-            <li>
-              <router-link class="nav-link" to="/about">所有商品</router-link>
-            </li>
-            <div class="sa">
-              <li>
-                <router-link class="as nav-link" to="/ShopCart"
-                  ><img src="../assets/cart.svg" alt=""
-                /></router-link>
-              </li>
-              <router-link class="as nav-link" to="/ShopCart"
-                  ><p>購物車</p></router-link>
-            </div>
-            <div class="sa">
-              <li>
-                <router-link class="as nav-link" to="/RePair"
-                  ><img src="../assets/repair.svg" alt=""
-                /></router-link>
-              </li>
-              <router-link class="as nav-link" to="/RePair"
-                  ><p>報修</p></router-link>
-            </div>
-            <li>
-              <a
-                v-if="loginstr == true"
-                class="nav-link"
-                href="#"
-                @click.prevent="dan"
-                >登出</a
+            <li v-if="this.$route.path == '/'">
+              <router-link class="nav-link colortoggle" to="/"
+                >首頁</router-link
               >
-              <a v-else class="nav-link" href="#" @click.prevent="dan">登入</a>
+            </li>
+            <li v-else>
+              <router-link class="nav-link" @click="ab(1)" to="/"
+                >首頁</router-link
+              >
+            </li>
+            <li v-if="this.$route.path == '/about'">
+              <router-link class="nav-link colortoggle" to="/about"
+                >所有商品</router-link
+              >
+            </li>
+            <li v-else>
+              <router-link class="nav-link" @click="ab(2)" to="/about"
+                ><p>所有商品</p></router-link
+              >
+            </li>
+            <li v-if="this.$route.path == '/ShopCart'">
+              <router-link class="nav-link colortoggle" to="/ShopCart"
+                >購物車</router-link
+              >
+            </li>
+            <li v-else>
+              <router-link class="nav-link" @click="ab(3)" to="/ShopCart"
+                ><p>購物車</p></router-link
+              >
+            </li>
+            <li v-if="this.$route.path == '/RePair'">
+              <router-link class="nav-link colortoggle" to="/RePair"
+                >報修</router-link
+              >
+            </li>
+            <li v-else>
+              <router-link class="nav-link" @click="ab(4)" to="/RePair"
+                ><p>報修</p></router-link
+              >
             </li>
           </ul>
+        </div>
+        <div class="menus">
+          <ul>
+            <li v-if="$rou" @click="as">
+              <router-link class="nav-link" to="/" @click="home"
+                >首頁</router-link
+              >
+            </li>
+            <li @click="as">
+              <router-link class="nav-link" to="/about"
+                ><p>所有商品</p></router-link
+              >
+            </li>
+            <li @click="as">
+              <router-link class="nav-link" to="/ShopCart"
+                ><p>購物車</p></router-link
+              >
+            </li>
+
+            <li @click="as">
+              <router-link class="nav-link" to="/RePair"
+                ><p>報修</p></router-link
+              >
+            </li>
+          </ul>
+          <img @click="as" src="../assets/justif.svg" alt="" />
         </div>
       </nav>
     </div>
   </div>
-
-  <!-- <div class="navbg">
-        <div>
-        <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <div class="homeleft">
-      <router-link class="as nav-link" to="/"><img src="../assets/logo1.png" width="40" alt=""></router-link>
-      </div>
-    <div class="homeright">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <router-link class="nav-link" to="/">首頁</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/about">所有商品</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/ShopCart"><img src="../assets/cart.svg" alt=""> 購物車</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/RePair"><img src="../assets/repair.svg" alt=""> 報修</router-link>
-        </li>
-        <li class="nav-item">
-          <a v-if="loginstr == true"  class="nav-link" href="#"  @click.prevent="dan">登出</a>
-          <a v-else class="nav-link" href="#"  @click.prevent="dan">登入</a>
-        </li>
-      </ul>
-    </div>
-    </div>
-  </div>
-</nav>
-    </div>
-    </div> -->
 </template>
 
 <script>
 export default {
-  inject: ["EmiTter"],
   data() {
     return {
       Load: false,
       loginstr: true,
+      top: false,
+      url: "",
     };
   },
-  created() {},
+  mounted() {},
+
   methods: {
-    dan() {
-      this.Load = true;
-      const ApIloojim = `${process.env.VUE_APP_API}logout`;
-      this.axios.post(ApIloojim, this.login).then(() => {
-        this.loginstr = false;
-        this.Load = false;
-        this.$router.push("/DunLoo");
-        this.EmiTter.emit("mess", {
-          style: "rgb(255, 73, 73)",
-          title: "已登出",
-          content: "已登出帳戶",
-        });
-      });
+    as() {
+      const a = document.querySelector(".menus");
+      a.classList.toggle("color");
+    },
+    ab(a) {
+      const b = document.querySelectorAll(".nav-link");
+      b[a].classList.toggle("colortoggle");
     },
   },
 };
 </script>
 
 <style scoped lang="scss">
-// .navbg{
-//   background: rgba(0, 0, 0, 0);
-//     .container-fluid{
-//     position: fixed;
-//     top:0;
-//     display: flex;
-//     justify-content: space-between;
-
-//     .homeright{
-//       .collapse{
-//         .navbar-nav{
-//           .nav-item{
-//             .nav-link{
-//               color: black;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
 .navbg {
+  background: rgba(0, 0, 0, 0.452);
+  z-index: 2;
   width: 100%;
-  background: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
   .navbars {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    .navleft{
-      .as{
-        img{
-          width: 100%;
+    .navleft {
+      border: none;
+      .as {
+        img {
+          width: 30%;
         }
       }
     }
     .navright {
-      margin-right: 1rem;
+      display: flex;
+      justify-content: center;
       ul {
         display: flex;
+        align-items: center;
         li {
-          
           color: white;
           margin-left: 1.5rem;
-          a{
+          a {
             width: 100%;
           }
         }
-        li *:hover{
+        li *:focus {
           color: orangered;
+          border-bottom: 4px solid orangered;
         }
         .sa {
-          .as *:hover{
-            color: orangered;
-          }
+          align-items: center;
+
           display: flex;
           p {
             color: white;
           }
-          
+        }
+        .sa *:focus {
+          color: orangered;
+          border-bottom: 4px solid orangered;
+        }
+      }
+    }
+    .colortoggle {
+      color: orangered;
+      border-bottom: 4px solid orangered;
+    }
+    .menus {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 720px) {
+  .navbg {
+    background: rgba(0, 0, 0, 0.452);
+    z-index: 2;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    .navbars {
+      width: 100%;
+      height: 10vh;
+      display: flex;
+      justify-content: space-between;
+      .navleft {
+        padding: 1rem;
+        .as {
+          img {
+            width: 30%;
+          }
+        }
+      }
+      .navright {
+        display: none;
+      }
+      @keyframes aaa {
+        0% {
+          right: -50px;
+          top: -180px;
+        }
+        50% {
+          right: -10px;
+          top: -180px;
+        }
+        100% {
+          right: 00px;
+          top: 0px;
+        }
+      }
+
+      .menus {
+        display: block;
+        justify-content: space-between;
+        padding: 1rem;
+        img {
+          width: 60%;
+        }
+        ul {
+          display: none;
+        }
+      }
+      .color {
+        right: 0px;
+        top: 0px;
+        animation-name: aaa;
+        animation-duration: 3s;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.452);
+        width: 40%;
+        img {
+          width: 30%;
+          display: block;
+          margin: 0 auto;
+        }
+        ul {
+          display: block;
+          li {
+            text-align: center;
+            color: white;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+          }
         }
       }
     }

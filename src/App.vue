@@ -1,18 +1,16 @@
 <template>
   <body>
     <TooSt></TooSt>
-    <div class="navbar">
-      <Asdd></Asdd>
-    </div>
+    <Asdd></Asdd>
     <div class="contain">
       <router-view />
     </div>
-    <div class="foo ">
+    <div class="foo">
       <FooTer></FooTer>
     </div>
   </body>
 </template>
-<style  lang="scss">
+<style lang="scss">
 @import "./assets/all";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -122,7 +120,7 @@ section {
 }
 body {
   line-height: 1;
-  overflow-x:initial;
+  overflow-x: initial;
 }
 ol,
 ul {
@@ -144,24 +142,20 @@ table {
   border-spacing: 0;
 }
 
-body{
+body {
+  box-sizing: border-box;
   background: #000;
   position: relative;
   width: 100%;
-  .navbar{
-    z-index: 2;
+
+  .contain {
     width: 100%;
-    position: fixed;
-    top: 0;
   }
-  .contain{
-    width: 100%;
-  };
-  .foo{
+  .foo {
     width: 100%;
   }
 }
-*{
+* {
   box-sizing: border-box;
 }
 </style>
@@ -171,16 +165,26 @@ import EmiTter from "../src/methods/mitt.js";
 import TooSt from "../src/components/TooSt.vue";
 import Asdd from "../src/components/BioTe.vue";
 import FooTer from "../src/components/FooTer.vue";
+
 export default {
+  data() {
+    return {
+      url: "11",
+    };
+  },
   provide() {
     return {
       EmiTter,
     };
   },
+  inject: ["EmiTter"],
   components: {
     TooSt,
     Asdd,
     FooTer,
   },
+  created() {},
+  mounted() {},
+  methods: {},
 };
 </script>
