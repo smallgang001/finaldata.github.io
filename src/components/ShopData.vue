@@ -292,7 +292,10 @@ export default {
               .img1 {
                 width: 55%;
                 min-width: 60px;
-                max-width: 105px;
+                img {
+                  max-width: 105px;
+                  min-height: 30px;
+                }
               }
               .img2 {
                 padding-bottom: 5rem;
