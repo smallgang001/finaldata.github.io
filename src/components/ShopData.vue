@@ -294,7 +294,7 @@ export default {
                 min-width: 60px;
                 img {
                   max-width: 105px;
-                  min-height: 30px;
+                  max-height: 105px;
                 }
               }
               .img2 {
