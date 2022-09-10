@@ -293,7 +293,8 @@ export default {
                 width: 55%;
                 min-width: 50px;
                 img {
-                  max-width: 105px;
+                  max-width: 100px;
+                  min-width: 20px;
                   max-height: 105px;
                 }
               }
