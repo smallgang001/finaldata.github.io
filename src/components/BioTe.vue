@@ -54,7 +54,7 @@
         </div>
         <div class="menus">
           <ul>
-            <li v-if="$rou" @click="as">
+            <li @click="as">
               <router-link class="nav-link" to="/" @click="home"
                 >首頁</router-link
               >
@@ -193,11 +193,11 @@ export default {
       @keyframes aaa {
         0% {
           right: -50px;
-          top: -180px;
+          top: -220px;
         }
         50% {
           right: -10px;
-          top: -180px;
+          top: -220px;
         }
         100% {
           right: 00px;

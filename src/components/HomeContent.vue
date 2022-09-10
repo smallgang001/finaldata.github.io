@@ -2172,7 +2172,7 @@ export default {
         text-align: center;
         margin: 0 auto;
         margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         min-width: 380px;
         width: 90%;
         background-image: url("../assets/q1.png");
@@ -2180,16 +2180,16 @@ export default {
         h1 {
           margin-top: 3rem;
           margin-left: 0rem;
-          font-size: 2rem;
+          font-size: 8px;
           color: rgb(255, 255, 255);
         }
         .pe {
           padding-bottom: 50px;
         }
         p {
-          font-size: 0.2rem;
+          font-size: 1rem;
           letter-spacing: 0.2rem;
-          line-height: 10px;
+          line-height: 25px;
           text-align: left;
 
           margin-left: 0rem;
@@ -2212,9 +2212,9 @@ export default {
           color: rgb(255, 255, 255);
         }
         p {
-          font-size: 0.2rem;
+          font-size: 8px;
           letter-spacing: 0.2rem;
-          line-height: 15px;
+          line-height: 20px;
           text-align: left;
           margin-left: 0rem;
           color: white;
